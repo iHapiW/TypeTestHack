@@ -12,7 +12,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 chrome_options = Options()
-chrome_options.add_argument(f'--load-extension=/home/ihapiw/.config/google-chrome/Default/Extensions/gcknhkkoolaabfmlnjonogaaifnjlfnp/8.9_0')
+chrome_options.add_argument('--load-extension=/home/ihapiw/.config/google-chrome/Default/Extensions'
+                            '/gcknhkkoolaabfmlnjonogaaifnjlfnp/8.9_0')
 driver = webdriver.Chrome(
     service=ChromeService(ChromeDriverManager().install()),
     options=chrome_options
@@ -22,9 +23,6 @@ driver.get("https://typetest.io")
 while True:
     input()
     while True:
-        search_box = WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.CLASS_NAME, "test-char"))
-        )
 
         test_text = driver.find_elements(By.CLASS_NAME, "test-char")
         correct = driver.find_elements(By.CLASS_NAME, "correct")
