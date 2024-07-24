@@ -51,7 +51,7 @@ while True:
         while i != len(txt)-1:
             try:
                 inp.send_keys(txt[i])
-                sleep(uniform(0.01, 0.02))
+                sleep(uniform(0.01, 0.04))
                 i += 1
             except:
                 brk = True
